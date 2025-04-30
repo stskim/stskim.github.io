@@ -11,28 +11,73 @@
     .collage {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      padding: 30px;
+      gap: 30px;
+      padding: 40px;
       text-align: center;
     }
     .collage-item {
       text-decoration: none;
       color: black;
-    }
-    .collage-item img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      transition: transform 0.3s;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
-    }
-    .collage-item:hover img {
-      transform: scale(1.05);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     .label {
-      margin-top: 10px;
+      margin-top: 12px;
       font-weight: bold;
       font-size: 16px;
+    }
+
+    /* About icon */
+    .about-icon {
+      width: 100px;
+      height: 100px;
+      background: url('https://cdn-icons-png.flaticon.com/512/1077/1077063.png') no-repeat center center;
+      background-size: contain;
+      border-radius: 50%;
+      transition: transform 0.3s;
+    }
+    .collage-item:hover .about-icon {
+      transform: scale(1.1);
+    }
+
+    /* Artwork stack effect */
+    .stack-container {
+      position: relative;
+      width: 120px;
+      height: 90px;
+      margin-top: 10px;
+    }
+    .stack-image {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+    .stack-image:nth-child(1) {
+      background: url('/assets/fig1.png') center/cover no-repeat;
+      z-index: 3;
+    }
+    .stack-image:nth-child(2) {
+      background: url('/assets/sk1.png') center/cover no-repeat;
+      top: 4px; left: 4px;
+      z-index: 2;
+    }
+    .stack-image:nth-child(3) {
+      background: url('/assets/sk2.png') center/cover no-repeat;
+      top: 8px; left: 8px;
+      z-index: 1;
+    }
+    .collage-item:hover .stack-image:nth-child(1) {
+      transform: translate(-10px, -10px);
+    }
+    .collage-item:hover .stack-image:nth-child(2) {
+      transform: translate(0px, 0px);
+    }
+    .collage-item:hover .stack-image:nth-child(3) {
+      transform: translate(10px, 10px);
     }
   </style>
 </head>
@@ -43,11 +88,15 @@
   </header>
   <div class="collage">
     <a href="pages/about.html" class="collage-item">
-      <img src="assets/chrome_bcGODVX8UF.png" alt="About Steven Kim" />
+      <div class="about-icon"></div>
       <div class="label">About</div>
     </a>
     <a href="pages/artwork.html" class="collage-item">
-      <img src="assets/chrome_HSdB36xTkG.png" alt="Artwork Page" />
+      <div class="stack-container">
+        <div class="stack-image"></div>
+        <div class="stack-image"></div>
+        <div class="stack-image"></div>
+      </div>
       <div class="label">Artwork</div>
     </a>
   </div>
