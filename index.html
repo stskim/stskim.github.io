@@ -7,12 +7,30 @@
   <title>Steven Kim - Portfolio</title>
   <style>
     body { margin: 0; font-family: Arial, sans-serif; background: #fff; }
-    header { text-align: center; padding: 40px 20px; background: #222; color: white; }
+    .banner {
+      background: url('/assets/banner.jpg') center/cover no-repeat;
+      height: 300px;
+      width: 100%;
+    }
+    .title-bar {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .title-bar h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+    .title-bar p {
+      margin: 10px 0 0;
+      font-size: 18px;
+    }
     .collage {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 40px;
-      padding: 50px;
+      padding: 60px 50px 50px;
       text-align: center;
       justify-items: center;
     }
@@ -29,7 +47,6 @@
       font-size: 20px;
     }
 
-    /* About icon */
     .about-icon {
       width: 300px;
       height: 300px;
@@ -38,7 +55,6 @@
       border-radius: 50%;
     }
 
-    /* Artwork stack effect */
     .stack-container {
       position: relative;
       width: 360px;
@@ -79,19 +95,11 @@
   </style>
 </head>
 <body>
-  <header style="
-      background: url('/assets/banner.jpg') center/cover no-repeat;
-      color: white;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
-      height: 300px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    ">
+  <div class="banner"></div>
+  <div class="title-bar">
     <h1>Steven Kim</h1>
     <p>Art Portfolio</p>
-  </header>
+  </div>
   <div class="collage">
     <a href="pages/about.html" class="collage-item">
       <div class="about-icon"></div>
