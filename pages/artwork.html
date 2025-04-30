@@ -6,19 +6,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Artwork - Steven Kim</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #f9f9f9; padding: 20px; }
+    body { font-family: Arial, sans-serif; background: #f9f9f9; padding: 20px; margin: 0; }
+    h1 { margin-top: 0; }
     h2 { margin-top: 40px; }
     .gallery {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 12px;
     }
-    .gallery img, .gallery video {
+    .gallery img {
       max-width: 250px;
-      width: 100%;
+      height: auto;
       border-radius: 6px;
-      background: #fff;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      cursor: pointer;
+      object-fit: contain;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+      transition: transform 0.2s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    /* Lightbox styles */
+    .lightbox {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.85);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      display: none;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
     }
   </style>
 </head>
@@ -26,34 +50,53 @@
   <h1>Artwork by Steven Kim</h1>
 <h2>Figure Drawings</h2>
 <div class='gallery'>
-  <img src='/assets/chrome_bcgodvx8uf.png' alt='chrome_bcgodvx8uf.png' />
-  <img src='/assets/illustration8.png' alt='illustration8.png' />
-  <img src='/assets/quick_sketch_8_30.png' alt='quick_sketch_8_30.png' />
-  <img src='/assets/sketch0071.png' alt='sketch0071.png' />
+<img src="/assets/chrome_bcgodvx8uf.png" alt="chrome_bcgodvx8uf.png" onclick="openLightbox('/assets/chrome_bcgodvx8uf.png')" />
+<img src="/assets/illustration8.png" alt="illustration8.png" onclick="openLightbox('/assets/illustration8.png')" />
+<img src="/assets/quick_sketch_8_30.png" alt="quick_sketch_8_30.png" onclick="openLightbox('/assets/quick_sketch_8_30.png')" />
+<img src="/assets/sketch0071.png" alt="sketch0071.png" onclick="openLightbox('/assets/sketch0071.png')" />
 </div>
 <h2>Sketches</h2>
 <div class='gallery'>
-  <img src='/assets/chrome_hsdb36xtkg.png' alt='chrome_hsdb36xtkg.png' />
-  <img src='/assets/chrome_o7isvqptgl.png' alt='chrome_o7isvqptgl.png' />
-  <img src='/assets/chrome_prfoe4d1vk.png' alt='chrome_prfoe4d1vk.png' />
-  <img src='/assets/chrome_r8dwxxlbbb.png' alt='chrome_r8dwxxlbbb.png' />
-  <img src='/assets/chrome_voaztsliyt1.png' alt='chrome_voaztsliyt1.png' />
-  <img src='/assets/chrome_xmjc41uunc.png' alt='chrome_xmjc41uunc.png' />
-  <img src='/assets/chrome_zlllsbmtfd.png' alt='chrome_zlllsbmtfd.png' />
-  <img src='/assets/clipstudiopaint_mb5hcj510l_1.png' alt='clipstudiopaint_mb5hcj510l_1.png' />
-  <img src='/assets/clipstudiopaint_us8z8bzvei.png' alt='clipstudiopaint_us8z8bzvei.png' />
-  <img src='/assets/clipstudiopaint_wb1bfjbjna.png' alt='clipstudiopaint_wb1bfjbjna.png' />
-  <img src='/assets/flash_m2how7u2la.png' alt='flash_m2how7u2la.png' />
-  <img src='/assets/flash_svkrzjm1wx.png' alt='flash_svkrzjm1wx.png' />
+<img src="/assets/chrome_hsdb36xtkg.png" alt="chrome_hsdb36xtkg.png" onclick="openLightbox('/assets/chrome_hsdb36xtkg.png')" />
+<img src="/assets/chrome_o7isvqptgl.png" alt="chrome_o7isvqptgl.png" onclick="openLightbox('/assets/chrome_o7isvqptgl.png')" />
+<img src="/assets/chrome_prfoe4d1vk.png" alt="chrome_prfoe4d1vk.png" onclick="openLightbox('/assets/chrome_prfoe4d1vk.png')" />
+<img src="/assets/chrome_r8dwxxlbbb.png" alt="chrome_r8dwxxlbbb.png" onclick="openLightbox('/assets/chrome_r8dwxxlbbb.png')" />
+<img src="/assets/chrome_voaztsliyt1.png" alt="chrome_voaztsliyt1.png" onclick="openLightbox('/assets/chrome_voaztsliyt1.png')" />
+<img src="/assets/chrome_xmjc41uunc.png" alt="chrome_xmjc41uunc.png" onclick="openLightbox('/assets/chrome_xmjc41uunc.png')" />
+<img src="/assets/chrome_zlllsbmtfd.png" alt="chrome_zlllsbmtfd.png" onclick="openLightbox('/assets/chrome_zlllsbmtfd.png')" />
+<img src="/assets/clipstudiopaint_mb5hcj510l_1.png" alt="clipstudiopaint_mb5hcj510l_1.png" onclick="openLightbox('/assets/clipstudiopaint_mb5hcj510l_1.png')" />
+<img src="/assets/clipstudiopaint_us8z8bzvei.png" alt="clipstudiopaint_us8z8bzvei.png" onclick="openLightbox('/assets/clipstudiopaint_us8z8bzvei.png')" />
+<img src="/assets/clipstudiopaint_wb1bfjbjna.png" alt="clipstudiopaint_wb1bfjbjna.png" onclick="openLightbox('/assets/clipstudiopaint_wb1bfjbjna.png')" />
+<img src="/assets/flash_m2how7u2la.png" alt="flash_m2how7u2la.png" onclick="openLightbox('/assets/flash_m2how7u2la.png')" />
+<img src="/assets/flash_svkrzjm1wx.png" alt="flash_svkrzjm1wx.png" onclick="openLightbox('/assets/flash_svkrzjm1wx.png')" />
 </div>
 <h2>Rough Animations</h2>
 <div class='gallery'>
-  <img src='/assets/base_ball_throw.gif' alt='base_ball_throw.gif' />
-  <img src='/assets/ezgif_com_gif_maker.gif' alt='ezgif_com_gif_maker.gif' />
-  <img src='/assets/final_project.gif' alt='final_project.gif' />
-  <img src='/assets/girl_running_on_fish.gif' alt='girl_running_on_fish.gif' />
-  <img src='/assets/jumps.gif' alt='jumps.gif' />
-  <img src='/assets/slap.gif' alt='slap.gif' />
+<img src="/assets/base_ball_throw.gif" alt="base_ball_throw.gif" onclick="openLightbox('/assets/base_ball_throw.gif')" />
+<img src="/assets/ezgif_com_gif_maker.gif" alt="ezgif_com_gif_maker.gif" onclick="openLightbox('/assets/ezgif_com_gif_maker.gif')" />
+<img src="/assets/final_project.gif" alt="final_project.gif" onclick="openLightbox('/assets/final_project.gif')" />
+<img src="/assets/girl_running_on_fish.gif" alt="girl_running_on_fish.gif" onclick="openLightbox('/assets/girl_running_on_fish.gif')" />
+<img src="/assets/jumps.gif" alt="jumps.gif" onclick="openLightbox('/assets/jumps.gif')" />
+<img src="/assets/slap.gif" alt="slap.gif" onclick="openLightbox('/assets/slap.gif')" />
 </div>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="Full-size artwork" />
+</div>
+
+<script>
+  function openLightbox(src) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    lightboxImg.src = src;
+    lightbox.style.display = 'flex';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
 </body>
 </html>
