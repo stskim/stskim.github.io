@@ -11,17 +11,28 @@
     .collage {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 10px;
-      padding: 20px;
+      gap: 20px;
+      padding: 30px;
+      text-align: center;
     }
-    .collage a img {
+    .collage-item {
+      text-decoration: none;
+      color: black;
+    }
+    .collage-item img {
       width: 100%;
       height: auto;
       border-radius: 8px;
       transition: transform 0.3s;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
     }
-    .collage a:hover img {
+    .collage-item:hover img {
       transform: scale(1.05);
+    }
+    .label {
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 16px;
     }
   </style>
 </head>
@@ -31,8 +42,14 @@
     <p>Art Portfolio</p>
   </header>
   <div class="collage">
-    <a href="pages/about.html"><img src="assets/fig1.png" alt="About Steven Kim" /></a>
-    <a href="pages/artwork.html"><img src="assets/sk1.png" alt="Artwork Page" /></a>
+    <a href="pages/about.html" class="collage-item">
+      <img src="assets/chrome_bcGODVX8UF.png" alt="About Steven Kim" />
+      <div class="label">About</div>
+    </a>
+    <a href="pages/artwork.html" class="collage-item">
+      <img src="assets/chrome_HSdB36xTkG.png" alt="Artwork Page" />
+      <div class="label">Artwork</div>
+    </a>
   </div>
 </body>
 </html>
