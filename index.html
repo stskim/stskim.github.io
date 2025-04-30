@@ -10,10 +10,11 @@
     header { text-align: center; padding: 40px 20px; background: #222; color: white; }
     .collage {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
-      padding: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      padding: 50px;
       text-align: center;
+      justify-items: center;
     }
     .collage-item {
       text-decoration: none;
@@ -23,35 +24,25 @@
       align-items: center;
     }
     .label {
-      margin-top: 12px;
+      margin-top: 18px;
       font-weight: bold;
-      font-size: 16px;
+      font-size: 20px;
     }
 
     /* About icon */
     .about-icon {
       width: 300px;
       height: 300px;
-      width: 100px;
-      height: 100px;
       background: url('https://cdn-icons-png.flaticon.com/512/1077/1077063.png') no-repeat center center;
       background-size: contain;
       border-radius: 50%;
-      transition: transform 0.3s;
-    }
-    .collage-item:hover .about-icon {
-      width: 300px;
-      height: 300px;
-      transform: scale(1.1);
     }
 
     /* Artwork stack effect */
     .stack-container {
+      position: relative;
       width: 360px;
       height: 270px;
-      position: relative;
-      width: 120px;
-      height: 90px;
       margin-top: 10px;
     }
     .stack-image {
@@ -68,12 +59,12 @@
     }
     .stack-image:nth-child(2) {
       background: url('/assets/sk1.png') center/cover no-repeat;
-      top: 4px; left: 4px;
+      top: 6px; left: 6px;
       z-index: 2;
     }
     .stack-image:nth-child(3) {
       background: url('/assets/sk2.png') center/cover no-repeat;
-      top: 8px; left: 8px;
+      top: 12px; left: 12px;
       z-index: 1;
     }
     .collage-item:hover .stack-image:nth-child(1) {
