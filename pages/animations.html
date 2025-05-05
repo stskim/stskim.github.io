@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Animations - Steven Kim</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #fff; color: #000; }
+    header {
+      background-color: #222;
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+    .nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 20px;
+    }
+    .nav a {
+      text-decoration: none;
+      color: #222;
+      font-weight: bold;
+      font-size: 18px;
+      border: 2px solid #222;
+      padding: 8px 16px;
+      border-radius: 6px;
+    }
+    .nav a:hover {
+      background-color: #222;
+      color: white;
+    }
+    .section {
+      padding: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .section h2 {
+      margin-bottom: 20px;
+      border-bottom: 2px solid #222;
+      padding-bottom: 10px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    video, img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Animations</h1>
+  </header>
+  <div class="nav">
+    <a href="artwork.html">Drawings</a>
+    <a href="animations.html">Animations</a>
+  </div>
+  <div class="section">
+    <h2>Video Project</h2>
+    <video controls>
+      <source src="../assets/final_project.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div class="section">
+    <h2>GIF Animations</h2>
+    <div class="gallery">
+      <img src="../assets/Base_ball_throw.gif" alt="Baseball Throw">
+      <img src="../assets/ezgif.com-gif-maker.gif" alt="ezgif">
+      <img src="../assets/final project.gif" alt="Final Project">
+      <img src="../assets/Girl_running_on_fish.gif" alt="Running on Fish">
+      <img src="../assets/jumps.gif" alt="Jumps">
+      <img src="../assets/slap.gif" alt="Slap">
+    </div>
+  </div>
+</body>
+</html>
